@@ -1,0 +1,46 @@
+1、UI
+会photoshop/Adoble Illustrator/CoreDraw/InkSpace/gimp/lrita等
+熟悉交互设计，能设计高质量高精简游戏UI，制作svg字体
+熟悉Unity、Creator
+2、原画
+会photoshop/Adoble Illustrator/CoreDraw/InkSpace/gimp/lrita等
+插画，2D关卡制作，2.5D地图制作
+熟悉Unity、Creator
+3、特效
+会photoshop/Adoble Illustrator/CoreDraw/InkSpace/gimp/lrita等
+熟悉Unity，Creator各版本的粒子系统
+熟悉After Effect
+熟悉3dmax，maya，Blender等3d特效制作相关
+熟悉渲染管线，赛博林克等后期处理
+4、模型
+熟悉Unity，Creator个版本的建模，熟悉unity,creator地形制作
+熟悉3dmax，maya，Blender，c4d，natural-motion等3d特效制作相关
+熟悉3-Sweep，Autodesk 123D等建模技术
+熟悉渲染管线，建模，精通高低模制作，能制作低模的高精度炫彩贴图
+5、动画动作
+熟悉Unity，Creator个版本的动作动画制作
+熟悉3dmax，maya，Blender，c4d，natural-motion等3d特效制作相关
+熟悉渲染管线，Moph，骨骼动画，定格动画，帧动画等相关制作流程
+掌握3转2相关技术
+
+6、网页程序员
+DIV+CSS+TS/JS，社交向
+7、程序员
+程序员/软件设计师等
+C#/C++/TS/JS/LUA，游戏向
+8、高级程序员
+高级程序员/系统分析师/架构师等
+物理，数学，图形，粒子，性能，2D/3D，实时渲染，游戏性
+
+9、产品专员
+策划、创意，交互，产品，用研等方向
+
+10、我
+给个团队，15K
+只写代码，30K
+理想，130K
+
+最小配备：
+岗1：UI+特效 1个；
+岗2：程序员以上 3个；
+

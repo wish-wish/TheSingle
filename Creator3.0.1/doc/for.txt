@@ -1,0 +1,11 @@
+TheBoard,TheWalker,TheSingle
+for one screen
+thounds on a screen has a bit hard, but handreds on a screen seem is a bit easy. 
+for the father's walk
+for walkout a singler's self loop
+for a big heart
+a big herat trun to small/micro/tiny, then can't grow big , need team spirit.
+一颗大小分开之后，再次长大需要的是团队而非其他，没有什么比心人更需要团队……
+曾经Coding过的25种语言或脚本
+C、C++，C#，PYTHON，LUA，OBJECT PASCAL，JAVA，JAVASCRIPT，TYPESCRIPT，OBJECT-C，OBJECT-C++，SQL DDL/DML，MK SCRIPT，HTML/XML/CSS，REGEX，汇编语言，高程考试汇编COBOl（好像变高级语言了），SWIFT，PERL，GO，ACTION SCRIPT，SHADER，PHP，WIN的BAT，CMAKE SCRIPT
+这是个乱世，在拿到《高级程序员》18年之后的感悟

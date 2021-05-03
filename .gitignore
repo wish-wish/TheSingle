@@ -102,3 +102,20 @@ dist
 
 # TernJS port file
 .tern-port
+
+
+library/
+temp/
+local/
+profiles/
+
+#//////////////////////////
+# NPM
+#//////////////////////////
+node_modules/
+
+#//////////////////////////
+# WebStorm
+#//////////////////////////
+.idea/
+*.meta
