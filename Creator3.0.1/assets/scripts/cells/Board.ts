@@ -76,7 +76,17 @@ export class Board extends Component {
         let cmdnum=self.num;
         if(self.num<self.funmax)      
             cmdnum=self.funmax;
-        resources.load("cell/Sprite",Prefab,(err:any,perfab:Prefab)=>{//load cell/func prefab
+        let perres="Sprite";
+        let r=Math.random()*10;
+        if(r>3&&r<7)
+        {
+            perres="Sprite1";
+        }
+        else if(r>=7)
+        {
+            perres="Sprite2";
+        }
+        resources.load("cell/"+perres,Prefab,(err:any,perfab:Prefab)=>{//load cell/func prefab
             if(err)
             {
                 console.warn(err);
@@ -104,7 +114,7 @@ export class Board extends Component {
                 let c=sprite.addComponent(Cmd);
                 sprite.active=false;
                 sprite.on(SystemEventType.TOUCH_START,(event)=>{
-                    if(event.target.name=="Sprite")
+                    if(event.target.name==perres)
                         self.touchSprite(sprite);
                     let c=sprite.getComponent(Cmd);
                     let rtc=sprite.getComponentInChildren(RichTextComponent);
@@ -121,7 +131,7 @@ export class Board extends Component {
             self.initWalks();
             self.cwWalkOut();    
         });
-        resources.load("cell/Sprite",Prefab,(err:any,perfab:Prefab)=>{//load buddy hint prefab(house&&cross/group)
+        resources.load("cell/"+perres,Prefab,(err:any,perfab:Prefab)=>{//load buddy hint prefab(house&&cross/group)
             if(err)
             {
                 console.warn(err);
