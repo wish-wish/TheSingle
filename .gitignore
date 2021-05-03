@@ -107,6 +107,7 @@ dist
 library/
 temp/
 local/
+build/
 profiles/
 
 #//////////////////////////
