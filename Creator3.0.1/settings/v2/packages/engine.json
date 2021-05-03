@@ -74,13 +74,13 @@
     "includeModules": [
       "base",
       "gfx-webgl",
-      "tween",
       "3d",
       "2d",
       "ui",
       "physics-2d-builtin",
       "intersection-2d",
-      "particle-2d"
+      "particle-2d",
+      "tween"
     ],
     "noDeprecatedFeatures": {
       "value": false,

@@ -49,6 +49,9 @@ export class Board extends Component {
     public defscale=1.0;
     public deflen=60;
 
+    public delaytime=500;
+    public interval=0;
+
     @property({
         type:Size
     })
@@ -144,9 +147,9 @@ export class Board extends Component {
         // window.onresize(function(){
         //     console.log("onresize2");
         // });
-        setInterval(()=>{
+        self.interval=setInterval(()=>{
             self.touchSprite(self.funcs[0]);
-        },150);
+        },self.delaytime);
     }
     touchSprite(sprite)
     {
@@ -178,7 +181,12 @@ export class Board extends Component {
                     self.hideBuddies();
                     self.initWalks();
                     self.cwWalkOut();
-                    self.mode=0;                    
+                    self.mode=0;
+                    self.delaytime=100;
+                    clearInterval(self.interval);
+                    self.interval=setInterval(()=>{
+                        self.touchSprite(self.funcs[0]);
+                    },self.delaytime);
                 }                                
                 //self.doFunsLayout();
                 self.biglevels=(self.biglevels+1)%(self.num*self.num+2);
@@ -206,9 +214,14 @@ export class Board extends Component {
                     self.mode=(self.mode+1)%self.modenum;
                     self.hidesAllShow();
                     self.num=1;
+                    self.delaytime=500;
                     self.doLayout();
                     self.initWalks();
                     self.cwWalkOut();
+                    clearInterval(self.interval);
+                    self.interval=setInterval(()=>{
+                        self.touchSprite(self.funcs[0]);
+                    },self.delaytime);
                 }
             }
         }
