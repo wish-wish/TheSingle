@@ -178,8 +178,18 @@ export class Board extends Component {
             }
             else
             {
-                this.doCellsLayout();
-                this.doFunsLayout();
+
+                if(self.mode==0)
+                {
+                    //product do some modify//for interactive design is enough
+                    this.doCellsLayout();
+                    this.doFunsLayout();
+                }
+                else
+                {
+                    this.doCellsLayout();
+                    this.doFunsLayout();
+                }
                 self.interval=setInterval(()=>{
                     self.touchSprite(self.funcs[0],1);
                 },self.delaytime);
