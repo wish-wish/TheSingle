@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, resources, Prefab, Vec3,instantiate,find, RichTextComponent, RichText, UITransform, Size, view, SystemEventType, size, Graphics } from 'cc';
+import { _decorator, Component, Node, resources, Prefab, Vec3,instantiate,find, RichTextComponent, RichText, UITransform, Size, view, SystemEventType, size, Graphics, Sprite } from 'cc';
 import {} from 'cc/env'
 import { PoolMgr } from '../data/PoolMgr';
 import { Cell } from './Cell';
@@ -51,6 +51,8 @@ export class Board extends Component {
 
     public delaytime=500;
     public interval=0;
+
+    public stopInterval=false;
 
     @property({
         type:Size
@@ -115,7 +117,7 @@ export class Board extends Component {
                 sprite.active=false;
                 sprite.on(SystemEventType.TOUCH_START,(event)=>{
                     if(event.target.name==perres)
-                        self.touchSprite(sprite);
+                        self.touchSprite(sprite,0);
                     let c=sprite.getComponent(Cmd);
                     let rtc=sprite.getComponentInChildren(RichTextComponent);
                     console.log(c!.cmds+":"+rtc?.string+":"+event.target.name);
@@ -158,13 +160,32 @@ export class Board extends Component {
         //     console.log("onresize2");
         // });
         self.interval=setInterval(()=>{
-            self.touchSprite(self.funcs[0]);
+            self.touchSprite(self.funcs[0],1);
         },self.delaytime);
     }
-    touchSprite(sprite)
+    touchSprite(sprite:Sprite,implus:number=0)
     {
-        let self=this;        
-        let rtc=sprite.getComponentInChildren(RichTextComponent);       
+        let self=this;
+        if(implus===0)
+        {
+            self.stopInterval=!self.stopInterval;
+            if(self.stopInterval)
+            {
+                self.hideCells();
+                self.hideBuddies();
+                clearInterval(self.interval);                
+            }
+            else
+            {
+                this.doCellsLayout();
+                this.doFunsLayout();
+                self.interval=setInterval(()=>{
+                    self.touchSprite(self.funcs[0],1);
+                },self.delaytime);
+            }
+            return;
+        }
+        let rtc=sprite.getComponentInChildren(RichTextComponent);
         if(rtc?.string=="Mod")
         {                                                                        
             if(self.num==this.nummax)
@@ -187,7 +208,7 @@ export class Board extends Component {
                     self.num=self.levelnum;
                     self.mode=1;
                     self.doLayout(); 
-                    self.hideCells();                           
+                    self.hideCells();
                     self.hideBuddies();
                     self.initWalks();
                     self.cwWalkOut();
@@ -195,7 +216,7 @@ export class Board extends Component {
                     self.delaytime=100;
                     clearInterval(self.interval);
                     self.interval=setInterval(()=>{
-                        self.touchSprite(self.funcs[0]);
+                        self.touchSprite(self.funcs[0],2);
                     },self.delaytime);
                 }                                
                 //self.doFunsLayout();
@@ -210,7 +231,6 @@ export class Board extends Component {
                     //     let rtc=node.getComponentInChildren(RichTextComponent);
                     //     rtc!.string=(i+1).toString();
                     // }
-
                     //(self.cells[self.walklist[self.biglevels]] as Node).active=true;
                     let node=(self.cells[self.walklist[self.biglevels-1]] as Node);
                     //let node=(self.cells[self.walklist[self.num*self.num-self.biglevels]] as Node);
@@ -230,7 +250,7 @@ export class Board extends Component {
                     self.cwWalkOut();
                     clearInterval(self.interval);
                     self.interval=setInterval(()=>{
-                        self.touchSprite(self.funcs[0]);
+                        self.touchSprite(self.funcs[0],2);
                     },self.delaytime);
                 }
             }
@@ -245,7 +265,7 @@ export class Board extends Component {
             {
                 this.walks[i].push(0);
             }
-        }        
+        }
     }
     getCenter()
     {
@@ -269,7 +289,7 @@ export class Board extends Component {
         let dindex=0;
         let step=1;
         let startx=center;
-        let starty=center;  
+        let starty=center;
         let single=wnum%2;
         dindex=dindex+1;
         this.walks[startx][starty]=dindex;//start
