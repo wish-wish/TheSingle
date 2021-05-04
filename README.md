@@ -3,6 +3,7 @@ TheSingle for seeking a job in global.<br/>
 the first id is:http://www.5icoin.com/thesingle/<br/>
 and:http://www.5icoin.com/thesingle1/<br/>
 click mod can accerate<br/>
+click mod can stop thetimer<br/>
 stop cause the component of graphics,absurb<br/>
 something about:<br/>
 https://github.com/wish-wish/Evolutionism<br/>
