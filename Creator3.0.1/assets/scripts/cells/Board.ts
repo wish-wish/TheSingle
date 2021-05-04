@@ -166,7 +166,8 @@ export class Board extends Component {
     touchSprite(sprite:Sprite,implus:number=0)
     {
         let self=this;
-        if(implus===0)
+        let rtc=sprite.getComponentInChildren(RichTextComponent);
+        if(implus===0&&rtc?.string=="A2")
         {
             self.stopInterval=!self.stopInterval;
             if(self.stopInterval)
@@ -184,8 +185,7 @@ export class Board extends Component {
                 },self.delaytime);
             }
             return;
-        }
-        let rtc=sprite.getComponentInChildren(RichTextComponent);
+        }        
         if(rtc?.string=="Mod")
         {                                                                        
             if(self.num==this.nummax)
