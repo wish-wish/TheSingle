@@ -91,11 +91,15 @@ export class Draw extends Component {
         this.idx3=0;
         this.arr=this.Hrdaya(20,20,20);
 
+        g1!.clear();
         g1!.moveTo(this.arr[0][0]*this.xscale, this.arr[0][1]*this.yscale);
+        g2!.clear();
         g2!.moveTo(this.arr[0][0]*this.xscale, this.arr[0][1]*this.yscale);
+        g3!.clear();
         g3!.moveTo(this.arr[0][0]*this.xscale, this.arr[0][1]*this.yscale);
+        g4!.clear();
         g4!.moveTo(this.arr[0][0]*this.xscale, this.arr[0][1]*this.yscale);
-
+        
         setInterval(()=>{
             this.idx=this.Line(g1!,this.idx);
             this.idx1=this.Line(g2!,this.idx1);
@@ -124,23 +128,28 @@ export class Draw extends Component {
             g!.lineTo(arr[i+1][0], arr[i+1][1]);
         }
         g!.close();
-        g!.stroke();        
+        g!.stroke();
     }
     Line(g:Graphics,idx:number)
     {        
         if(idx<this.arr.length)
         {            
-            //g!.moveTo(this.arr[this.idx-1>=0?this.idx-1:0][0]*this.xscale, this.arr[this.idx-1>=0?this.idx-1:0][1]*this.yscale);
-            g!.lineTo(this.arr[idx][0]*this.xscale, this.arr[idx][1]*this.yscale);
-            g!.stroke();
+            //g!.moveTo(this.arr[idx-1>=0?idx-1:0][0]*this.xscale, this.arr[idx-1>=0?idx-1:0][1]*this.yscale);
+            g!.lineTo(this.arr[idx][0]*this.xscale, this.arr[idx][1]*this.yscale);            
+            g!.stroke();            
             idx+=1;
         }
         else if(idx<=(this.arr.length+5))
         {        
-            //g!.lineTo(this.arr[0][0]*this.xscale, this.arr[0][1]*this.yscale)            
-            g!.close();
-            g!.stroke();
-            g!.fill();
+            if(idx==this.arr.length)
+            {
+                //g!.moveTo(this.arr[idx-1>=0?idx-1:0][0]*this.xscale, this.arr[idx-1>=0?idx-1:0][1]*this.yscale);
+                g!.lineTo(this.arr[0][0]*this.xscale, this.arr[0][1]*this.yscale);
+                //g!.moveTo(this.arr[0][0]*this.xscale, this.arr[0][1]*this.yscale);
+                g!.close();
+                g!.stroke();
+                g!.fill();
+            }
             idx+=1;
         }
         else if(idx>(this.arr.length+5))

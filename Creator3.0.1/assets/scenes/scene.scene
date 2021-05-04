@@ -426,7 +426,7 @@
     "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -44.49,
+      "x": -88.985,
       "y": -100.8,
       "z": 0
     },
@@ -464,7 +464,7 @@
     "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 88.98,
+      "width": 177.97,
       "height": 201.6
     },
     "_anchorPoint": {
@@ -494,7 +494,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "1",
+    "_string": "20",
     "_horizontalAlign": 0,
     "_verticalAlign": 0,
     "_actualFontSize": 160,
@@ -526,7 +526,7 @@
     "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 88.98,
+      "width": 177.97,
       "height": 201.6
     },
     "_anchorPoint": {
@@ -609,7 +609,7 @@
     "_enabled": true,
     "__prefab": null,
     "_lineHeight": 160,
-    "_string": "<color=ff00ff>1</color>",
+    "_string": "<color=ff00ff>20</color>",
     "_horizontalAlign": 0,
     "_fontSize": 160,
     "_maxWidth": 0,
@@ -1038,7 +1038,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "5",
+    "_string": "1",
     "_horizontalAlign": 0,
     "_verticalAlign": 0,
     "_actualFontSize": 40,
@@ -1153,7 +1153,7 @@
     "_enabled": true,
     "__prefab": null,
     "_lineHeight": 40,
-    "_string": "<color=#0000ff>5</color>",
+    "_string": "<color=#0000ff>1</color>",
     "_horizontalAlign": 0,
     "_fontSize": 40,
     "_maxWidth": 0,
@@ -1514,7 +1514,7 @@
     "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -22.245,
+      "x": -11.125,
       "y": -25.2,
       "z": 0
     },
@@ -1552,7 +1552,7 @@
     "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 44.49,
+      "width": 22.25,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -1582,7 +1582,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "20",
+    "_string": "7",
     "_horizontalAlign": 0,
     "_verticalAlign": 0,
     "_actualFontSize": 40,
@@ -1614,7 +1614,7 @@
     "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 44.49,
+      "width": 22.25,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -1697,7 +1697,7 @@
     "_enabled": true,
     "__prefab": null,
     "_lineHeight": 40,
-    "_string": "<color=ffffff>20<color>",
+    "_string": "<color=ffffff>7<color>",
     "_horizontalAlign": 0,
     "_fontSize": 40,
     "_maxWidth": 0,
