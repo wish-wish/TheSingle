@@ -209,6 +209,7 @@ export class Board extends Component {
                 self.doLayout();
                 self.initWalks();
                 self.cwWalkOut();
+                self.delaytime=500;
             }
             else
             {

@@ -54,7 +54,7 @@ export class Draw extends Component {
 
         g!.lineWidth=3;
         g!.fillColor.fromHEX('#ff0000');
-        g!.strokeColor.fromHEX('#00ff00');
+        g!.strokeColor.fromHEX('#ffff00');
         this.Diamond(g!);
 
         let n1=find('Canvas/Graphics3') as Node;
@@ -69,7 +69,7 @@ export class Draw extends Component {
         n2.position=new Vec3(-50,0,0);
         g2!.lineWidth=3;
         g2!.fillColor.fromHEX('#ff0000');
-        g2!.strokeColor.fromHEX('#ffff00');
+        g2!.strokeColor.fromHEX('#00ff00');
 
         let n3=find('Canvas/Graphics1') as Node;
         let g3=n3!.getComponent(Graphics);
