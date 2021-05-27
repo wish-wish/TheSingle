@@ -90,9 +90,7 @@ export class Draw extends Component {
         this.idx2=0;
         this.idx3=0;
         this.arr=this.Hrdaya(20,20,20);
-
-        g1!.clear();
-        g1!.moveTo(this.arr[0][0]*this.xscale, this.arr[0][1]*this.yscale);
+        
         g2!.clear();
         g2!.moveTo(this.arr[0][0]*this.xscale, this.arr[0][1]*this.yscale);
         g3!.clear();
@@ -101,6 +99,11 @@ export class Draw extends Component {
         g4!.moveTo(this.arr[0][0]*this.xscale, this.arr[0][1]*this.yscale);
         
         setInterval(()=>{
+            if(this.idx1==0)
+            {
+                g1!.clear();
+                g1!.moveTo(this.arr[0][0]*this.xscale, this.arr[0][1]*this.yscale);
+            }
             this.idx=this.Line(g1!,this.idx);
             this.idx1=this.Line(g2!,this.idx1);
             this.idx2=this.Line(g3!,this.idx2);
@@ -135,7 +138,8 @@ export class Draw extends Component {
         if(idx<this.arr.length)
         {            
             //g!.moveTo(this.arr[idx-1>=0?idx-1:0][0]*this.xscale, this.arr[idx-1>=0?idx-1:0][1]*this.yscale);
-            g!.lineTo(this.arr[idx][0]*this.xscale, this.arr[idx][1]*this.yscale);            
+            g!.lineTo(this.arr[idx][0]*this.xscale, this.arr[idx][1]*this.yscale);
+            
             g!.stroke();            
             idx+=1;
         }

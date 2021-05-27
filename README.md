@@ -12,7 +12,7 @@ if you have ability of programmer, see this is enought.<br/>
 <br/>
 the full after fill heart is fragile, so should read the creator's fill<br/>
 <br/>
-or see thesudoku.apk from my product demo, for interactive design.<br/>
+want to see thesudoku.apk from my product demo, for interactive design.<br/>
 链接：https://pan.baidu.com/s/1uvp02uj51yjBD9PzMHrN-g<br/>
 提取码：cjoy <br/>
 

@@ -1,5 +1,7 @@
 TODO:
-一、found one difference,  need the hue algrithm on sprite/a micro game
+一、found one difference
+color
+textures,  need the hue algrithm on sprite/a micro game
 二、something about sudoku
 1、rubric of the sudoku, like npgen.
 2、the solution steps of the sudoku.

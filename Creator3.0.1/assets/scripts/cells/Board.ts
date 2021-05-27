@@ -51,7 +51,11 @@ export class Board extends Component {
 
     public delaytime=500;
     public interval=0;
+    public interval_main=0;
 
+    @property({
+        type:Boolean
+    })
     public stopInterval=false;
 
     @property({
@@ -131,7 +135,7 @@ export class Board extends Component {
             //self.deflen=self.pfSize.width;            
             self.doLayout();
             self.initWalks();
-            self.cwWalkOut();    
+            self.cwWalkOut();
         });
         resources.load("cell/"+perres,Prefab,(err:any,perfab:Prefab)=>{//load buddy hint prefab(house&&cross/group)
             if(err)
@@ -147,11 +151,12 @@ export class Board extends Component {
         });
         // view.setResizeCallback(function(){
         //     console.log("setResizeCallback");
-        // });        
-        self.node.on(SystemEventType.SIZE_CHANGED,(event)=>{            
+        // });
+        self.node.on(SystemEventType.SIZE_CHANGED,(event)=>{
             self.doLayout();
             self.initWalks();
             self.cwWalkOut();
+            console.log("SIZE_CHANGED");
         },self);
         // this.node.on("orientationchange",(event)=>{
         //     console.log('orientationchange1');
@@ -159,9 +164,47 @@ export class Board extends Component {
         // window.onresize(function(){
         //     console.log("onresize2");
         // });
-        self.interval=setInterval(()=>{
-            self.touchSprite(self.funcs[0],1);
-        },self.delaytime);
+
+        // if(!self.stopInterval)
+        // {
+        //     self.hideCells();
+        //     self.hideBuddies();
+        //     self.interval=setInterval(()=>{
+        //         self.touchSprite(self.funcs[0],1);
+        //     },self.delaytime);
+        // }
+        self.interval_main=setInterval(()=>{
+            this.bsetInterval();
+        },1000);
+    }
+    bsetInterval()
+    {        
+        let self=this;
+        clearInterval(self.interval_main);
+        self.hideCells();
+        self.hideBuddies();
+        if(self.stopInterval)
+        {            
+            clearInterval(self.interval);                
+        }
+        else
+        {
+
+            if(self.mode==0)
+            {
+                //product do some modify//for interactive design is enough
+                self.doCellsLayout();
+                self.doFunsLayout();
+            }
+            else
+            {
+                self.doCellsLayout();
+                self.doFunsLayout();
+            }
+            self.interval=setInterval(()=>{
+                self.touchSprite(self.funcs[0],1);
+            },self.delaytime);
+        }
     }
     touchSprite(sprite:Sprite,implus:number=0)
     {
@@ -170,30 +213,7 @@ export class Board extends Component {
         if(implus===0&&rtc?.string=="A2")
         {
             self.stopInterval=!self.stopInterval;
-            if(self.stopInterval)
-            {
-                self.hideCells();
-                self.hideBuddies();
-                clearInterval(self.interval);                
-            }
-            else
-            {
-
-                if(self.mode==0)
-                {
-                    //product do some modify//for interactive design is enough
-                    this.doCellsLayout();
-                    this.doFunsLayout();
-                }
-                else
-                {
-                    this.doCellsLayout();
-                    this.doFunsLayout();
-                }
-                self.interval=setInterval(()=>{
-                    self.touchSprite(self.funcs[0],1);
-                },self.delaytime);
-            }
+            self.bsetInterval();
             return;
         }        
         if(rtc?.string=="Mod")
@@ -373,7 +393,7 @@ export class Board extends Component {
     {                
         this.hideCells();
         this.hideFuns();
-        this.hideBuddies();   
+        this.hideBuddies();
     }
     hideCells()
     {
@@ -406,7 +426,7 @@ export class Board extends Component {
     {
         const self=this;
         let cntsize=this.getComponent(UITransform);
-        let s=cntsize!.contentSize;        
+        let s=cntsize!.contentSize;
         let w=s.height;
         let islanscapse=false;
         if(s.height>s.width)
@@ -464,7 +484,7 @@ export class Board extends Component {
             //rt!.string=i.toString();
             let rtc=sprite.getComponentInChildren(RichTextComponent);
             rtc!.string=(i%self.num+1).toString();
-        }        
+        }
     }
     doFunsLayout()
     {
@@ -589,15 +609,15 @@ export class Board extends Component {
         {
             w=s.height;
             islanscapse=true;
-        }             
+        }
         let cmdnum=self.num;
         if(self.num<self.funmax)
-            cmdnum=self.funmax;        
-        let ciw = (w-20)/cmdnum;  
+            cmdnum=self.funmax;       
+        let ciw = (w-20)/cmdnum; 
         let offset=(w-20)/2;
-        let iw = (w-20)/self.num; 
+        let iw = (w-20)/self.num;
         let bigoffset=self.num*(iw-self.deflen)/2;
-        let cbigoffset=self.num*(ciw-self.deflen)/2;              
+        let cbigoffset=self.num*(ciw-self.deflen)/2;
         for(let i=0;i<cmdnum*3;i++)//todo:layout buddies
         {
             

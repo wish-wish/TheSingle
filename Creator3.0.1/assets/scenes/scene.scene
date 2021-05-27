@@ -257,7 +257,7 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 33554432,
+    "_layer": 8388608,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -300,7 +300,7 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 1073741824,
+    "_layer": 8388608,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -322,7 +322,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 410.8020304568528,
+    "_orthoHeight": 342.26447709593776,
     "_near": 1,
     "_far": 2000,
     "_color": {
@@ -1807,6 +1807,7 @@
     "cells": [],
     "funcs": [],
     "buddies": [],
+    "stopInterval": true,
     "pfSize": {
       "__type__": "cc.Size",
       "width": 1,
